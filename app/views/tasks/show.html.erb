@@ -1,0 +1,18 @@
+<h1>Task ID = <%= @task.id %>の詳細ページ</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>タスク名</th>
+    <th>Created Date</th>
+    <th>Updated Date</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><%= @task.content %></td>
+    <td><%= @task.created_at %></td>
+    <td><%= @task.updated_at %></td>
+    <td><%= @task.status %></td>
+  </tr>
+</table>
+<%= link_to 'このTaskを編集する', edit_task_path(@task), class: 'btn btn-primary' %>
+<%= link_to 'このTaskを削除する', @deletask, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>

@@ -1,0 +1,23 @@
+<h1>All Tasks</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="row">ID</th>
+      <th scope="row">Task</th>
+      <th scope="row">Status</th>
+      <th scope="row">Update Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |i| %>
+    <tr>
+      <td><%= link_to i.id, i %></td>
+      <td><%= i.content %></td>
+      <td><%= i.status%></td>
+      <td><%= i.updated_at %></td>
+      <% end %>    
+    </tr>
+  </tbody>
+</table>
+<%= paginate @tasks %><br>
+<%= link_to "New Task Registration", new_task_path, class: "btn btn-success" %>
